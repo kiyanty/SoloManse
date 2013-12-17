@@ -32,7 +32,7 @@ public:
     void update();
     
 //    static HumanSprite* create();
-    static HumanSprite* create(bool isCouple, int numLine);
+    static HumanSprite* create(int humanState, int numLine);
     
 };
 #endif /* defined(___012_Prototype__Meteorite__) */

@@ -37,6 +37,8 @@ bool RatingScene::init()
     {
         return false;
     }
+    GameData::gameState = GameData::STATE_INTRO;
+    
     FileIO::sharedInstance()->readFile();
     if(GameData::guestId == 0)
     {

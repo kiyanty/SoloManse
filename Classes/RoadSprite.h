@@ -14,14 +14,16 @@
 class RoadSprite : public cocos2d::CCSprite
 {
 private:
-    RoadSprite(int numLine);
+    RoadSprite(bool isLeftSide, bool isChair);
+    bool isLeftSide;
+    bool isChair;
     
 public:
     float deltaX;
     float deltaY;
     float deltaScale;
     
-    int numLine;
+//    int numLine;
     
     float currentX;
     float currentY; //= 1130.0f;
@@ -29,8 +31,9 @@ public:
 
     void update();
     
+    
 //    static RoadSprite* create();
-    static RoadSprite* create(int numLine);
+    static RoadSprite* create(bool isLeftSide, bool isChair);
     
 };
 #endif /* defined(___012_Prototype__Meteorite__) */

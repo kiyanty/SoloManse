@@ -5,6 +5,7 @@
 #include "HumanSprite.h"
 #include "LaneSprite.h"
 #include "CloudSprite.h"
+#include "RoadSprite.h"
 
 using namespace cocos2d;
 
@@ -31,7 +32,10 @@ public:
     void comboReset();
 
     void removeHumanSprite(HumanSprite* humanSprite);
-    void removeLaneSprite(LaneSprite* LaneSprite);
+    void removeLaneSprite(LaneSprite* laneSprite);
+    void removeRoadSprite(RoadSprite* roadSprite);
+    
+    void clickBtnPause();
 
     // preprocessor macro for "static create()" constructor ( node() deprecated )
     CREATE_FUNC(GameScene);
@@ -44,6 +48,7 @@ private:
     
     CCArray* arrayHumanSprite;
     CCArray* arrayLaneSprite;
+    CCArray* arrayRoadSprite;
     
     CCLayer* layerPauseMenu;
     CCMenu* menuStatePause;
@@ -66,6 +71,7 @@ private:
     //추가부분
     int humanCount;    
     CCloudSprite *mainCloud;
+    int roadChairCoolTime;
     
     // 끝
     
@@ -85,6 +91,7 @@ private:
     
     void createHumanSprite();
     void createLaneSprite();
+    void createRoadSprite();
     
     void initBtnPause();
     void initSpriteBackground();
@@ -110,7 +117,7 @@ private:
     void startSoundEffect(std::string fileName);
     
     // 메뉴 콜백
-    void clickBtnPause();
+//    void clickBtnPause(); // public으로 올렸음
     void clickBtnResume();
     void clickBtnExit();
     void clickBtnRestart();

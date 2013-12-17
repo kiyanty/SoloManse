@@ -13,8 +13,20 @@
 // 0 112 225 337 450 563 675 787 900
 // 가로 250 300 350 400 450 500 550 600 650 세로 516
 
-RoadSprite::RoadSprite(int numLine) : numLine(numLine), currentY(1130), currentScale(0.5f)
+RoadSprite::RoadSprite(bool isLeftSide, bool isChair) : isLeftSide(isLeftSide), isChair(isChair), currentY(1080/*1130*/), currentScale(0.5f)
 {
+    if(isLeftSide)
+    {
+        currentX = 200;
+        deltaX = -300 / (float) HumanSprite::maxFrame;
+    }
+    else
+    {
+        currentX = 700;
+        deltaX = 300 / (float) HumanSprite::maxFrame;
+    }
+
+/*
     switch(numLine)
     {
         case 1:
@@ -30,6 +42,7 @@ RoadSprite::RoadSprite(int numLine) : numLine(numLine), currentY(1130), currentS
             deltaX = (675 - 550) / (float) HumanSprite::maxFrame;
             break;
     }
+  */
     
     deltaY = currentY / (float) HumanSprite::maxFrame;
     deltaScale = currentScale / (float) HumanSprite::maxFrame;
@@ -58,11 +71,11 @@ RoadSprite* RoadSprite::create()
 }
 */
 
-RoadSprite* RoadSprite::create(int numLine)
+RoadSprite* RoadSprite::create(bool isLeftSide, bool isChair)
 {
-    RoadSprite *pobSprite = new RoadSprite(numLine);
+    RoadSprite *pobSprite = new RoadSprite(isLeftSide, isChair);
 
-    if (pobSprite && pobSprite->initWithFile("dote.png"))
+    if (pobSprite && pobSprite->initWithFile(isLeftSide ? (isChair ? "chair1.png" : "leaf1.png") : (isChair ? "chair2.png" : "leaf2.png")))
     {
         pobSprite->autorelease();
         return pobSprite;
@@ -92,7 +105,7 @@ void RoadSprite::update()
     
     if(currentY < -200)
     {
-//        GameScene::gameScene->removeRoadSprite(this);
+        GameScene::gameScene->removeRoadSprite(this);
     }
     
 }

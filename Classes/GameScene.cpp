@@ -36,6 +36,7 @@ bool GameScene::init()
     {
         return false;
     }
+    GameData::gameState = GameData::STATE_PLAYING;
     
     gameScene = this;
     humanCountZ = 50;
@@ -57,6 +58,9 @@ bool GameScene::init()
     arrayLaneSprite = CCArray::create();
     arrayLaneSprite->retain();
     
+    arrayRoadSprite = CCArray::create();
+    arrayRoadSprite->retain();
+    
     this->startBackgroundMusic();
     
     //plus
@@ -71,6 +75,7 @@ bool GameScene::init()
     currentLine = 2;
     this->deltaComboNum = 1;
     HumanSprite::maxFrame = 300;
+    roadChairCoolTime = 0;
     
     return true;
 }
@@ -91,6 +96,13 @@ void GameScene::update()
     if(time % 15 == 0)
     {
         this->createLaneSprite();
+        this->createRoadSprite();
+        if(rand() % 20 == 0 && time == 30)
+        {
+            HumanSprite* woman = HumanSprite::create(2, rand() % 4 + 1);
+            arrayHumanSprite->addObject(woman);
+            this->addChild(woman, humanCountZ);
+        }
         if(time == 60)
         {
             this->createHumanSprite();
@@ -130,11 +142,15 @@ void GameScene::update()
         HumanSprite* human = (HumanSprite*) arrayHumanSprite->objectAtIndex(i);
         human->update();
     }
-
     for(int i=0; i<arrayLaneSprite->count(); i++)
     {
-        LaneSprite* Lane = (LaneSprite*) arrayLaneSprite->objectAtIndex(i);
-        Lane->update();
+        LaneSprite* lane = (LaneSprite*) arrayLaneSprite->objectAtIndex(i);
+        lane->update();
+    }
+    for(int i=0; i<arrayRoadSprite->count(); i++)
+    {
+        RoadSprite* road = (RoadSprite*) arrayRoadSprite->objectAtIndex(i);
+        road->update();
     }
 }
 
@@ -287,10 +303,16 @@ void GameScene::removeHumanSprite(HumanSprite *humanSprite)
     this->removeChild(humanSprite, true);
 }
 
-void GameScene::removeLaneSprite(LaneSprite *LaneSprite)
+void GameScene::removeLaneSprite(LaneSprite *laneSprite)
 {
-    arrayLaneSprite->removeObject(LaneSprite);
-    this->removeChild(LaneSprite, true);
+    arrayLaneSprite->removeObject(laneSprite);
+    this->removeChild(laneSprite, true);
+}
+
+void GameScene::removeRoadSprite(RoadSprite *roadSprite)
+{
+    arrayRoadSprite->removeObject(roadSprite);
+    this->removeChild(roadSprite, true);
 }
 
 void GameScene::updateCharAnimation()
@@ -415,6 +437,9 @@ void GameScene::createHumanSprite()
 //    this->addChild(spr, humanCountZ);
 
     
+    // HumanSprite::create(int humanState, int numLine); 으로 변경
+    // 여자는 독립적으로 나오게 할 것, 지금은 임시로 GameScene::update()에서 생성함
+    // humanState 0: couple 1: man 2: woman
     
     if( this->humanCount <= 20 )
     {
@@ -516,6 +541,25 @@ void GameScene::createLaneSprite()
     this->addChild(spr3, 3);
 }
 
+void GameScene::createRoadSprite()
+{
+    roadChairCoolTime++;
+    bool isChair = false;
+    if(roadChairCoolTime == 3)
+    {
+        roadChairCoolTime = 0;
+        isChair = true;
+    }
+    
+    RoadSprite* spr1 = RoadSprite::create(true, isChair);
+    arrayRoadSprite->addObject(spr1);
+    RoadSprite* spr2 = RoadSprite::create(false, isChair);
+    arrayRoadSprite->addObject(spr2);
+    
+    this->addChild(spr1, 3);
+    this->addChild(spr2, 3);
+}
+
 void GameScene::clickBtnPause()
 {
     //    initMenuItemBtnPause();
@@ -537,13 +581,13 @@ void GameScene::clickBtnExit()
 
     CCScene* scene = CCTransitionFade::create(0.3f, MainScene::scene());
     CCDirector::sharedDirector()->replaceScene(scene);
-    GameData::gameState = GameData::STATE_PLAYING;
+//    GameData::gameState = GameData::STATE_PLAYING;
 }
 
 void GameScene::clickBtnRestart()
 {
 //    layerPauseMenu->setVisible(false);
-    GameData::gameState = GameData::STATE_PLAYING;
+//    GameData::gameState = GameData::STATE_PLAYING;
     HumanSprite::maxFrame = 300;
 /*
     int count = arrayHumanSprite->count();

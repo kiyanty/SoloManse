@@ -7,11 +7,14 @@
 //
 
 #include "AppDelegate.h"
-
+#include "SimpleAudioEngine.h"
 #include "cocos2d.h"
 #include "RatingScene.h"
+#include "GameData.h"
+#include "GameScene.h"
 
 USING_NS_CC;
+using namespace CocosDenshion;
 
 AppDelegate::AppDelegate()
 {
@@ -55,8 +58,23 @@ void AppDelegate::applicationDidEnterBackground()
 {
     CCDirector::sharedDirector()->pause();
 
+    switch(GameData::gameState)
+    {
+//        case GameData::STATE_PAUSE:
+//            break;
+        case GameData::STATE_PLAYING:
+            GameScene::gameScene->clickBtnPause();
+            break;
+//        case GameData::STATE_INTRO:
+//            break;
+//        case GameData::STATE_MENU:
+//        case GameData::STATE_GAMEOVER:
+//        case GameData::STATE_RECORD:
+//            break;
+    }
+    
     // if you use SimpleAudioEngine, it must be paused
-    // SimpleAudioEngine::sharedEngine()->pauseBackgroundMusic();
+    SimpleAudioEngine::sharedEngine()->pauseBackgroundMusic();
 }
 
 // this function will be called when the app is active again
@@ -64,6 +82,22 @@ void AppDelegate::applicationWillEnterForeground()
 {
     CCDirector::sharedDirector()->resume();
     
+    switch(GameData::gameState)
+    {
+        case GameData::STATE_PAUSE:
+            return;
+//            break;
+//        case GameData::STATE_PLAYING:
+//            GameScene::gameScene->clickBtnPause();
+//            break;
+            //        case GameData::STATE_INTRO:
+            //            break;
+            //        case GameData::STATE_MENU:
+            //        case GameData::STATE_GAMEOVER:
+            //        case GameData::STATE_RECORD:
+            //            break;
+    }
+    
     // if you use SimpleAudioEngine, it must resume here
-    // SimpleAudioEngine::sharedEngine()->resumeBackgroundMusic();
+    SimpleAudioEngine::sharedEngine()->resumeBackgroundMusic();
 }

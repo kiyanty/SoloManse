@@ -9,7 +9,7 @@
 #include "GameData.h"
 #include <cmath>
 
-int GameData::gameState = STATE_PLAYING;
+int GameData::gameState = STATE_INTRO;
 bool GameData::isMusicSound = true;
 int GameData::highScore = 0;
 int GameData::guestId = 0;

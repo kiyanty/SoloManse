@@ -36,7 +36,7 @@ bool MainScene::init()
     {
         return false;
     }
-    
+    GameData::gameState = GameData::STATE_MENU;
     this->initBackground();
     // Background init
     
@@ -107,6 +107,7 @@ void MainScene::initMenu()
 
 void MainScene::gotoRankHomePage()
 {
+    CocosDenshion::SimpleAudioEngine::sharedEngine()->pauseBackgroundMusic();
     
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     //    CCMessageBox("Developer : Joong Seok Lee\nIllustrator : Min Su Park\n\n[ Homepage ]\nfacebook.com/StoneAttack", "Stone Attack\n- The Last Survivor -");

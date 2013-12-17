@@ -42,7 +42,7 @@ HumanSprite::HumanSprite(int humanState, int numLine) : humanState(humanState), 
     deltaScale = currentScale / (float) maxFrame;
     
 //    currentY = 1084;
-    CCLOG("%f %f %f %f", currentX, currentY, deltaX, deltaY);
+//    CCLOG("%f %f %f %f", currentX, currentY, deltaX, deltaY);
     this->setPosition(ccp(currentX, currentY));
     this->setScale(currentScale);
 }
@@ -65,9 +65,9 @@ HumanSprite* HumanSprite::create()
 }
 */
 
-HumanSprite* HumanSprite::create(bool isCouple, int numLine)
+HumanSprite* HumanSprite::create(int humanState, int numLine)
 {
-    int humanState = isCouple ? 0 : (rand() % 10 == 0 ? 2 : 1);
+    // humanState 0은 커플, 1은 남자 2는 여자
     HumanSprite *pobSprite = new HumanSprite(humanState, numLine);
 
     if (pobSprite && pobSprite->initWithFile(humanState == 0 ? "coupleon.png" : humanState == 1 ? "solo.png" : "female_solo.png"))
