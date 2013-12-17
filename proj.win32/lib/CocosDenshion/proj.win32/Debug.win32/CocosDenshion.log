@@ -1,0 +1,18 @@
+﻿Build started 2013-12-17 오후 2:56:01.
+     1>Project "C:\Users\Kyoseung\Documents\cocos2d-2.0-x-2.0.4\CocosDenshion\proj.win32\CocosDenshion.vcxproj" on node 4 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I..\Include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _USRDLL /D COCOSDENSHIONWIN32_EXPORTS /D _EXPORT_DLL_ /D _WINDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug.win32\\" /Fd"Debug.win32\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt ..\win32\MciPlayer.cpp ..\win32\SimpleAudioEngine.cpp
+         SimpleAudioEngine.cpp
+         MciPlayer.cpp
+         코드를 생성하고 있습니다...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Kyoseung\Documents\cocos2d-2.0-x-2.0.4\Debug.win32\libCocosDenshion.dll" /INCREMENTAL:NO /NOLOGO winmm.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Kyoseung\Documents\cocos2d-2.0-x-2.0.4\Debug.win32\libCocosDenshion.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Kyoseung\Documents\cocos2d-2.0-x-2.0.4\Debug.win32\libCocosDenshion.lib" /MACHINE:X86 /SAFESEH /DLL Debug.win32\MciPlayer.obj
+         Debug.win32\SimpleAudioEngine.obj
+     1>MciPlayer.obj : warning LNK4075: '/EDITANDCONTINUE'이(가) '/OPT:LBR' 사양으로 인해 무시됩니다.
+            C:\Users\Kyoseung\Documents\cocos2d-2.0-x-2.0.4\Debug.win32\libCocosDenshion.lib 라이브러리 및 C:\Users\Kyoseung\Documents\cocos2d-2.0-x-2.0.4\Debug.win32\libCocosDenshion.exp 개체를 생성하고 있습니다.
+         CocosDenshion.vcxproj -> C:\Users\Kyoseung\Documents\cocos2d-2.0-x-2.0.4\Debug.win32\libCocosDenshion.dll
+     1>Done Building Project "C:\Users\Kyoseung\Documents\cocos2d-2.0-x-2.0.4\CocosDenshion\proj.win32\CocosDenshion.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.93

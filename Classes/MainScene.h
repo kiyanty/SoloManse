@@ -47,22 +47,22 @@ private:
     
     void initToggleBtn();
     // After init
-    void initHowtoLayer();
-    void initCreditLayer();
+    void initHowtoLayer(CCObject*);
+    void initCreditLayer(CCObject*);
     
     // Out Layer
     void outHowtoLayer();
     void outCreditLayer();
     
     // Scene
-    void gotoGameScene();
+    void gotoGameScene(CCObject*);
     void gotoHowtoScene();
     void gotoCreditScene();
-    void gotoRankHomePage();
+    void gotoRankHomePage(CCObject*);
     
-    void clickOptionMusic();
+    void clickOptionMusic(CCObject*);
     
-    void virtual update();
+    void virtual update(float);
     
     void registerWithTouchDispatcher();
     bool ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);

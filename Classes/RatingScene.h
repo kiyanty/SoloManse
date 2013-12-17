@@ -25,7 +25,7 @@ public:
 
     
 private:
-    void nextScene();
+    void nextScene(float);
 };
 
 #endif /* defined(__StoneAttack__RatingScene__) */

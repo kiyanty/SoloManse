@@ -35,7 +35,7 @@ public:
     void removeLaneSprite(LaneSprite* laneSprite);
     void removeRoadSprite(RoadSprite* roadSprite);
     
-    void clickBtnPause();
+    void clickBtnPause(CCObject*);
 
     // preprocessor macro for "static create()" constructor ( node() deprecated )
     CREATE_FUNC(GameScene);
@@ -87,7 +87,7 @@ private:
     
     void updateCharAnimation();
     void changeCharLine(bool isRight);
-    void update();
+    void update(float);
     
     void createHumanSprite();
     void createLaneSprite();
@@ -118,9 +118,9 @@ private:
     
     // 메뉴 콜백
 //    void clickBtnPause(); // public으로 올렸음
-    void clickBtnResume();
-    void clickBtnExit();
-    void clickBtnRestart();
+    void clickBtnResume(CCObject*);
+    void clickBtnExit(CCObject*);
+	void clickBtnRestart(CCObject*);
     
     
     void registerWithTouchDispatcher();

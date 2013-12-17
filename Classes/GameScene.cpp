@@ -76,18 +76,23 @@ bool GameScene::init()
     this->deltaComboNum = 1;
     HumanSprite::maxFrame = 300;
     roadChairCoolTime = 0;
+
+	this->currentCombo = 0;
+	this->currentRunAnimation = 0;
+	this->currentScore = 0;
+	this->time = 0;
     
     return true;
 }
 
-void GameScene::update()
+void GameScene::update(float ct)
 {
     if(GameData::gameState == GameData::STATE_PAUSE)
     {
         return;
     }
     else if(GameData::gameState == GameData::STATE_GAMEOVER)
-    {
+    { 
         return;
     }
     updateCharAnimation();
@@ -560,7 +565,7 @@ void GameScene::createRoadSprite()
     this->addChild(spr2, 3);
 }
 
-void GameScene::clickBtnPause()
+void GameScene::clickBtnPause(CCObject* pOjbect)
 {
     //    initMenuItemBtnPause();
     if(GameData::gameState == GameData::STATE_GAMEOVER)
@@ -574,7 +579,7 @@ void GameScene::clickBtnPause()
     instance->pauseBackgroundMusic();
 }
 
-void GameScene::clickBtnExit()
+void GameScene::clickBtnExit(CCObject* pObject)
 {
     CocosDenshion::SimpleAudioEngine* instance = CocosDenshion::SimpleAudioEngine::sharedEngine();
     instance->stopBackgroundMusic();
@@ -584,7 +589,7 @@ void GameScene::clickBtnExit()
 //    GameData::gameState = GameData::STATE_PLAYING;
 }
 
-void GameScene::clickBtnRestart()
+void GameScene::clickBtnRestart(CCObject* pObject)
 {
 //    layerPauseMenu->setVisible(false);
 //    GameData::gameState = GameData::STATE_PLAYING;
@@ -611,7 +616,7 @@ void GameScene::clickBtnRestart()
     
 }
 
-void GameScene::clickBtnResume()
+void GameScene::clickBtnResume(CCObject* pObject)
 {
     layerPauseMenu->setVisible(false);
     GameData::gameState = GameData::STATE_PLAYING;

@@ -63,7 +63,7 @@ void AppDelegate::applicationDidEnterBackground()
 //        case GameData::STATE_PAUSE:
 //            break;
         case GameData::STATE_PLAYING:
-            GameScene::gameScene->clickBtnPause();
+            GameScene::gameScene->clickBtnPause((CCObject*)NULL);
             break;
 //        case GameData::STATE_INTRO:
 //            break;

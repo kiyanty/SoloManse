@@ -64,7 +64,7 @@ bool RatingScene::init()
     return true;
 }
 
-void RatingScene::nextScene()
+void RatingScene::nextScene(float ct)
 {
     CCScene* scene = CCTransitionFade::create(0.3f, MainScene::scene());
     CCDirector::sharedDirector()->replaceScene(scene);

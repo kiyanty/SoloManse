@@ -105,7 +105,7 @@ void MainScene::initMenu()
     this->addChild(this->menuMain);
 }
 
-void MainScene::gotoRankHomePage()
+void MainScene::gotoRankHomePage(CCObject* pObject)
 {
     CocosDenshion::SimpleAudioEngine::sharedEngine()->pauseBackgroundMusic();
     
@@ -146,14 +146,14 @@ void MainScene::initLayer()
 }
 
 // update
-void MainScene::update()
+void MainScene::update(float ct)
 {
     this->mainCloud->update();
     // 시간에 따른 배경화면 변경
 }
 
 // GameScene 으로 
-void MainScene::gotoGameScene()
+void MainScene::gotoGameScene(CCObject* pObject)
 {
     CCScene* scene = CCTransitionFade::create(0.3f, GameScene::scene());
     CCDirector::sharedDirector()->replaceScene(scene);
@@ -170,7 +170,7 @@ void MainScene::menuCloseCallback(CCObject* pSender)
 }
 
 // HowtoLayer init
-void MainScene::initHowtoLayer()
+void MainScene::initHowtoLayer(CCObject* pObject)
 {
     this->menuMain->setEnabled(false);
     this->menuBtnSetting->setEnabled(false);
@@ -199,7 +199,7 @@ void MainScene::initHowtoLayer()
 }
 
 // CreditLayer init
-void MainScene::initCreditLayer()
+void MainScene::initCreditLayer(CCObject* pObject)
 {
     this->menuMain->setEnabled(false);
         this->menuBtnSetting->setEnabled(false);
@@ -260,7 +260,7 @@ bool MainScene::ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent)
     return false;
 }
 
-void MainScene::clickOptionMusic()
+void MainScene::clickOptionMusic(CCObject* pObject)
 {
     GameData::isMusicSound = !GameData::isMusicSound;
     FileIO::sharedInstance()->saveFile();
