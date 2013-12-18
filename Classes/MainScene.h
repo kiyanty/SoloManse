@@ -25,6 +25,8 @@ private:
     CCSprite* sprBackground;
     CCSprite* sprMainLogo;
 
+	CCArray* arrayCloudSprite;
+
     CCMenu* menuMain;
     CCMenuItem *miStart, *miHowTo, *miRanking, *miCredit, *miExit;
     
@@ -44,6 +46,7 @@ private:
     void initSprite();
     void initMenu();
     void initLayer();
+	void initCloudSprite();
     
     void initToggleBtn();
     // After init

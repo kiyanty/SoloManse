@@ -60,15 +60,12 @@ bool GameScene::init()
     
     arrayRoadSprite = CCArray::create();
     arrayRoadSprite->retain();
+
+	this->initCloudSprite();
     
     this->startBackgroundMusic();
     
     //plus
-    this->mainCloud = new CCloudSprite();
-    for( int i = 0; i < 6; i++ )
-    {
-        this->addChild( this->mainCloud->s_cloud[i].m_cloud , 9);
-    }
     
     this->humanCount = 0;
     
@@ -80,7 +77,7 @@ bool GameScene::init()
 	this->currentCombo = 0;
 	this->currentRunAnimation = 0;
 	this->currentScore = 0;
-	this->time = 0;
+	this->time = -1;
     
     return true;
 }
@@ -97,7 +94,7 @@ void GameScene::update(float ct)
     }
     updateCharAnimation();
     
-    time++;
+	time++;
     if(time % 15 == 0)
     {
         this->createLaneSprite();
@@ -125,9 +122,7 @@ void GameScene::update(float ct)
     sprintf(buf, "%d", currentScore);
     labelScore->setString(buf);
 
-    
-    this->mainCloud->update();
-    
+ 
     
 //    CCObject* temp;
     /*
@@ -157,6 +152,12 @@ void GameScene::update(float ct)
         RoadSprite* road = (RoadSprite*) arrayRoadSprite->objectAtIndex(i);
         road->update();
     }
+	for( int i = 0; i < this->arrayCloudSprite->count(); i++ )
+	{
+		//this->arrayCloudSprite->objectAtIndex(i)->update((float)NULL);
+		CCloudSprite* cloud = (CCloudSprite*) this->arrayCloudSprite->objectAtIndex(i);
+		cloud->update();
+	}
 }
 
 void GameScene::comboPlus()
@@ -563,6 +564,20 @@ void GameScene::createRoadSprite()
     
     this->addChild(spr1, 3);
     this->addChild(spr2, 3);
+}
+
+void GameScene::initCloudSprite()
+{
+	this->arrayCloudSprite = CCArray::create();
+	this->arrayCloudSprite->retain();
+
+	CCloudSprite* cloud[6];
+	for( int i = 0; i < 6; i++ )
+	{
+		cloud[i] = CCloudSprite::create();
+		this->arrayCloudSprite->addObject(cloud[i]);
+		this->addChild(cloud[i], 2);
+	}
 }
 
 void GameScene::clickBtnPause(CCObject* pOjbect)

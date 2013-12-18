@@ -1,17 +1,51 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="source">
-      <UniqueIdentifier>{e46a579b-c41c-4b15-be04-128142b6323f}</UniqueIdentifier>
-      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
-    </Filter>
-    <Filter Include="include">
-      <UniqueIdentifier>{b40de16c-e69f-4744-8c13-d3970881ca85}</UniqueIdentifier>
-      <Extensions>h;hpp;hxx;hm;inl;inc</Extensions>
-    </Filter>
     <Filter Include="resource">
       <UniqueIdentifier>{735a11e8-26d5-41e7-be95-9cec22c68e13}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;jpg;jpeg;jpe;png;manifest</Extensions>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{e4e68a1c-0c66-4947-99a1-56905672829a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Scene">
+      <UniqueIdentifier>{bac9a1c6-27a3-485c-a59f-e9f34716fb2b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Sprite">
+      <UniqueIdentifier>{a518da32-eff2-420b-844f-0b3cd3fb0661}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\GameData">
+      <UniqueIdentifier>{35c52915-4d38-4b5b-8a5a-ce240329856b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\File">
+      <UniqueIdentifier>{7b5d33db-31fb-4e87-9b55-37456df731fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\AppDelegate">
+      <UniqueIdentifier>{beb0abab-e0a1-40a1-ba70-5351b62e98a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Scene\DumpScene">
+      <UniqueIdentifier>{4160214f-367f-4d87-a381-f50b1e332cd7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Scene\GameScene">
+      <UniqueIdentifier>{ddd55f13-f9e3-48ad-b93d-ec909c85d714}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Scene\MainScene">
+      <UniqueIdentifier>{de7b75a3-4bd5-4923-8a6b-e2ae58d4b777}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Scene\RatingScene">
+      <UniqueIdentifier>{f7b0d45e-6386-46be-af97-f0f2288214c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Sprite\HumanSprite">
+      <UniqueIdentifier>{a2885785-6e7b-44e3-ae3d-2b5e97cc7935}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Sprite\CloudSprite">
+      <UniqueIdentifier>{5973f6a6-8c33-430d-b628-9ee93155dd58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Sprite\LaneSprite">
+      <UniqueIdentifier>{1e1ef631-da4a-4f66-94a4-68af2a235d56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Sprite\RoadSprite">
+      <UniqueIdentifier>{f12e1cca-8dfa-4455-8622-5a03af0587cc}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -34,94 +68,94 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="resource.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="main.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\RoadSprite.h">
-      <Filter>include</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\AppDelegate.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\CloudSprite.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\DumpScene.h">
-      <Filter>include</Filter>
+      <Filter>Source\AppDelegate</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\FileDecryptor.h">
-      <Filter>include</Filter>
+      <Filter>Source\File</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\FileEncryptor.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\GameData.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\GameScene.h">
-      <Filter>include</Filter>
+      <Filter>Source\File</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\FileIO.h">
-      <Filter>include</Filter>
+      <Filter>Source\File</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\LaneSprite.h">
-      <Filter>include</Filter>
+    <ClInclude Include="..\Classes\GameData.h">
+      <Filter>Source\GameData</Filter>
+    </ClInclude>
+    <ClInclude Include="main.h">
+      <Filter>Source\GameData</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Source\GameData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DumpScene.h">
+      <Filter>Source\Scene\DumpScene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameScene.h">
+      <Filter>Source\Scene\GameScene</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\MainScene.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\HumanSprite.h">
-      <Filter>include</Filter>
+      <Filter>Source\Scene\MainScene</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\RatingScene.h">
-      <Filter>include</Filter>
+      <Filter>Source\Scene\RatingScene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\HumanSprite.h">
+      <Filter>Source\Sprite\HumanSprite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\LaneSprite.h">
+      <Filter>Source\Sprite\LaneSprite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\RoadSprite.h">
+      <Filter>Source\Sprite\RoadSprite</Filter>
+    </ClInclude>
+    <ClInclude Include="CloudSprite.h">
+      <Filter>Source\Sprite\CloudSprite</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\AppDelegate.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\CloudSprite.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\DumpScene.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\FileEncryptor.cpp">
-      <Filter>source</Filter>
+      <Filter>Source\AppDelegate</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\FileDecryptor.cpp">
-      <Filter>source</Filter>
+      <Filter>Source\File</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\GameData.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\GameScene.cpp">
-      <Filter>source</Filter>
+    <ClCompile Include="..\Classes\FileEncryptor.cpp">
+      <Filter>Source\File</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\FileIO.cpp">
-      <Filter>source</Filter>
+      <Filter>Source\File</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\LaneSprite.cpp">
-      <Filter>source</Filter>
+    <ClCompile Include="..\Classes\GameData.cpp">
+      <Filter>Source\GameData</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source\GameData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\DumpScene.cpp">
+      <Filter>Source\Scene\DumpScene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameScene.cpp">
+      <Filter>Source\Scene\GameScene</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\MainScene.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\HumanSprite.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\RoadSprite.cpp">
-      <Filter>source</Filter>
+      <Filter>Source\Scene\MainScene</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\RatingScene.cpp">
-      <Filter>source</Filter>
+      <Filter>Source\Scene\RatingScene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\HumanSprite.cpp">
+      <Filter>Source\Sprite\HumanSprite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\LaneSprite.cpp">
+      <Filter>Source\Sprite\LaneSprite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\RoadSprite.cpp">
+      <Filter>Source\Sprite\RoadSprite</Filter>
+    </ClCompile>
+    <ClCompile Include="CloudSprite.cpp">
+      <Filter>Source\Sprite\CloudSprite</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

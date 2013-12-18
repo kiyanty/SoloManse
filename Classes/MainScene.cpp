@@ -48,11 +48,9 @@ bool MainScene::init()
     this->initLayer();
     // Layer init
     
-    this->mainCloud = new CCloudSprite();
-    for( int i = 0; i < 6; i++ )
-        this->addChild( this->mainCloud->s_cloud[i].m_cloud );
     
     this->initSprite();
+	this->initCloudSprite();
 
     
     this->uFrame = 0;
@@ -79,14 +77,14 @@ void MainScene::initBackground()
 {
     this->sprBackground = CCSprite::create("mainbackground.png");
     this->sprBackground->setPosition(ccp(450, 800));
-    this->addChild(this->sprBackground);
+    this->addChild(this->sprBackground, 1);
 }
 
 void MainScene::initSprite()
 {
     this->sprMainLogo = CCSprite::create("title.png");
     this->sprMainLogo->setPosition(ccp(450, 800));
-    this->addChild(this->sprMainLogo);
+    this->addChild(this->sprMainLogo, 3);
 }
 
 // Menu init
@@ -102,7 +100,7 @@ void MainScene::initMenu()
     this->menuMain = CCMenu::create( this->miStart, this->miHowTo, this->miRanking, this->miCredit, this->miExit, NULL );
     this->menuMain->alignItemsVerticallyWithPadding(40);
     this->menuMain->setPosition( ccp(450, 500) );
-    this->addChild(this->menuMain);
+    this->addChild(this->menuMain, 4);
 }
 
 void MainScene::gotoRankHomePage(CCObject* pObject)
@@ -148,8 +146,12 @@ void MainScene::initLayer()
 // update
 void MainScene::update(float ct)
 {
-    this->mainCloud->update();
-    // 시간에 따른 배경화면 변경
+    for( int i = 0; i < this->arrayCloudSprite->count(); i++ )
+	{
+		//this->arrayCloudSprite->objectAtIndex(i)->update((float)NULL);
+		CCloudSprite* cloud = (CCloudSprite*) this->arrayCloudSprite->objectAtIndex(i);
+		cloud->update();
+	}
 }
 
 // GameScene 으로 
@@ -169,6 +171,20 @@ void MainScene::menuCloseCallback(CCObject* pSender)
 #endif
 }
 
+void MainScene::initCloudSprite()
+{
+	this->arrayCloudSprite = CCArray::create();
+	this->arrayCloudSprite->retain();
+
+	CCloudSprite* cloud[6];
+	for( int i = 0; i < 6; i++ )
+	{
+		cloud[i] = CCloudSprite::create();
+		this->arrayCloudSprite->addObject(cloud[i]);
+		this->addChild(cloud[i], 2);
+	}
+}
+
 // HowtoLayer init
 void MainScene::initHowtoLayer(CCObject* pObject)
 {
@@ -186,8 +202,8 @@ void MainScene::initHowtoLayer(CCObject* pObject)
     
         this->howtoLayer[0]->addChild( sprHowtoBackground1 );
         this->howtoLayer[1]->addChild( sprHowtoBackground2 );
-        this->addChild( this->howtoLayer[0]);
-        this->addChild( this->howtoLayer[1]);
+        this->addChild( this->howtoLayer[0], 5);
+        this->addChild( this->howtoLayer[1], 5);
         this->howtoLayer[1]->setVisible(false);
     }
     else
@@ -211,7 +227,7 @@ void MainScene::initCreditLayer(CCObject* pObject)
         sprCreditBackground->setPosition(ccp(450, 800));
     
         this->creditLayer->addChild( sprCreditBackground );
-        this->addChild( this->creditLayer );
+        this->addChild( this->creditLayer, 5 );
     }
     else
     {
