@@ -25,20 +25,44 @@ package com.solo.manse;
 
 import org.cocos2dx.lib.Cocos2dxActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 
-public class SoloManse extends Cocos2dxActivity{
-
+public class SoloManse extends Cocos2dxActivity
+{
+	static AlertDialog alert;
+    private static BackKeyHandler backKeyHandler;	
 	public static SoloManse soloManse;
 	
-	protected void onCreate(Bundle savedInstanceState){
+	protected void onCreate(Bundle savedInstanceState)
+	{
 		super.onCreate(savedInstanceState);
 		soloManse = this;
+		
+		alert = new AlertDialog.Builder(this)
+		.setIcon(R.drawable.icon)
+		.setTitle("솔로는 외롭지 않아")
+		.setMessage("커플을 이대로 방치하고 게임을 종료할까요?")
+		.setPositiveButton("예", new DialogInterface.OnClickListener()
+		{
+			@Override
+			public void onClick(DialogInterface dialog, int which)
+ 			{
+ 				System.exit(0);
+ 			}
+ 		})
+ 		.setNegativeButton("아니요", null).create();
+		
+		backKeyHandler = new BackKeyHandler();
 	}
 	
-    static {
+    static
+    {
          System.loadLibrary("game");
     }
     
@@ -50,4 +74,25 @@ public class SoloManse extends Cocos2dxActivity{
 		soloManse.startActivity(i);
 		soloManse.overridePendingTransition(R.anim.fade, 0);    	
     }
+    
+    public static void backButton()
+    {
+        backKeyHandler.sendEmptyMessage(0);
+    }
+    
+    private class BackKeyHandler extends Handler
+    {
+        public void handleMessage(Message msg)
+        {
+        	if(alert.isShowing())
+        	{
+    			alert.cancel();    		
+        	}
+        	else
+        	{
+        		alert.show();
+        	}
+        }
+    }
+    
 }

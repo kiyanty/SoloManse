@@ -217,7 +217,9 @@ obj/local/armeabi/objs-debug/game_shared/__/__/Classes/GameScene.o: \
  /devlibs/cocos2d-2.0-x-2.0.4/solomanse/proj.android/../../CocosDenshion/android/../include/SimpleAudioEngine.h \
  /devlibs/cocos2d-2.0-x-2.0.4/solomanse/proj.android/../../CocosDenshion/android/../include/Export.h \
  jni/../../Classes/GameData.h jni/../../Classes/MainScene.h \
- jni/../../Classes/FileIO.h
+ jni/../../Classes/FileIO.h \
+ /devlibs/cocos2d-2.0-x-2.0.4/solomanse/proj.android/../../cocos2dx/platform/android/jni/JniHelper.h \
+ /DevLibs/android-ndk-r8b/platforms/android-8/arch-arm/usr/include/jni.h
 
 jni/../../Classes/GameScene.h:
 
@@ -662,3 +664,7 @@ jni/../../Classes/GameData.h:
 jni/../../Classes/MainScene.h:
 
 jni/../../Classes/FileIO.h:
+
+/devlibs/cocos2d-2.0-x-2.0.4/solomanse/proj.android/../../cocos2dx/platform/android/jni/JniHelper.h:
+
+/DevLibs/android-ndk-r8b/platforms/android-8/arch-arm/usr/include/jni.h:

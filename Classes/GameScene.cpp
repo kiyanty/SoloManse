@@ -4,6 +4,11 @@
 #include "MainScene.h"
 #include "FileIO.h"
 
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+#include "platform/android/jni/JniHelper.h"
+#endif // CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
+
+
 using namespace cocos2d;
 using namespace CocosDenshion;
 
@@ -50,7 +55,7 @@ bool GameScene::init()
     
     this->schedule(schedule_selector(GameScene::update));
     this->setTouchEnabled(true);
-    
+    this->setKeypadEnabled(true);
     
     arrayHumanSprite = CCArray::create();
     arrayHumanSprite->retain();
@@ -587,6 +592,7 @@ void GameScene::clickBtnPause(CCObject* pOjbect)
     {
         return;
     }
+    startSoundEffect("pong.wav");
     GameData::gameState = GameData::STATE_PAUSE;
     layerPauseMenu->setVisible(true);
     
@@ -777,3 +783,25 @@ void GameScene::initBMFont()
     labelScoreSpell->setAnchorPoint(ccp(1.0f, 0.5f));
     this->addChild(labelScoreSpell, 98);
 }
+
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+void GameScene::keyBackClicked()
+{
+    if(GameData::gameState == GameData::STATE_PLAYING)
+    {
+//        startSoundEffect("pong.wav");
+        this->clickBtnPause(NULL);
+    }
+    else
+    {
+        JniMethodInfo t;
+        if (JniHelper::getStaticMethodInfo(t, "com.solo.manse/SoloManse", "backButton", "()V"))
+        {
+            ///< 함수 호출
+            t.env->CallStaticVoidMethod(t.classID, t.methodID);
+            ///< Release
+            t.env->DeleteLocalRef(t.classID);
+        }
+    }
+}
+#endif // CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
