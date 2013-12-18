@@ -176,8 +176,8 @@ void MainScene::initCloudSprite()
 	this->arrayCloudSprite = CCArray::create();
 	this->arrayCloudSprite->retain();
 
-	CCloudSprite* cloud[6];
-	for( int i = 0; i < 6; i++ )
+	CCloudSprite* cloud[8];
+	for( int i = 0; i < 8; i++ )
 	{
 		cloud[i] = CCloudSprite::create();
 		this->arrayCloudSprite->addObject(cloud[i]);

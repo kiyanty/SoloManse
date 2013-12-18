@@ -2,11 +2,11 @@
 
 CCloudSprite::CCloudSprite(void)
 {
-	this->cloudSpeed = rand()% 6 + 1;
+	this->cloudSpeed = (rand()% 30)/10 + 2;
 	this->cX = rand()% 1100 - 100;
-	this->cY = rand()% 400 + 1200;
+	this->cY = rand()% 250 + 1300;
 
-	this->setScale( 1.0f );
+	this->setScale( 1.3f );
 	this->setPosition( ccp( this->cX, this->cY ) );
 }
 
@@ -71,6 +71,6 @@ void CCloudSprite::update()
 void CCloudSprite::resetCloud()
 {
 	this->cX = -100;
-	this->cY = this->cY = rand()% 300 + 1200;
-	this->cloudSpeed = rand()% 6 + 1;
+	this->cY = rand()% 250 + 1300;
+	this->cloudSpeed = (rand()% 30)/10 + 2;
 }

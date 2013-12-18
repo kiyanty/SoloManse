@@ -1,4 +1,4 @@
-﻿Build started 2013-12-18 오후 5:24:59.
+﻿Build started 2013-12-18 오후 6:06:53.
      1>Project "C:\Users\Kyoseung\Documents\Project\SoloManse\proj.win32\SoloManse.win32.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I. /I..\Classes /I.\lib\cocos2dx /I.\lib\cocos2dx\include /I.\lib\cocos2dx\kazmath\include /I.\lib\cocos2dx\platform\win32 /I.\lib\cocos2dx\platform\third_party\win32 /I.\lib\cocos2dx\platform\third_party\win32\OGLES /I.\lib\external /I.\lib\CocosDenshion\include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D STRICT /D _CRT_SECURE_NO_WARNINGS /D _SCL_SECURE_NO_WARNINGS_DEBUG /D COCOS2D_DEBUG=1 /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug.win32\\" /Fd"Debug.win32\vc110.pdb" /Gd /TP /wd4267 /wd4251 /wd4244 /analyze- /errorReport:prompt ..\Classes\CloudSprite.cpp
@@ -25,4 +25,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:02.34
+Time Elapsed 00:00:02.32
