@@ -12,9 +12,9 @@ CCloudSprite::CCloudSprite(void)
 
 CCloudSprite::CCloudSprite(float x, float y, float speed)
 {
-	this->cloudSpeed = (rand()% 30)/10 + 2;
+	this->cloudSpeed = speed;
 	this->cX = x;
-	this->cY = rand()% 250 + 1300;
+	this->cY = y;
 
 	this->setScale( 1.3f );
 	this->setPosition( ccp( this->cX, this->cY ) );
