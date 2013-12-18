@@ -1,35 +1,18 @@
-//
-//  CloudSprite.h
-//  MentalCare
-//
-//  Created by Kyoseung_Hackathon on 13. 12. 15..
-//
-//
-
-#ifndef __MentalCare__CloudSprite__
-#define __MentalCare__CloudSprite__
-
-#include <iostream>
+#pragma once
 #include "cocos2d.h"
 
-using namespace cocos2d;
-
-
-class CCloudSprite
+class CCloudSprite : public cocos2d::CCSprite
 {
 public:
-    CCloudSprite();
-    ~CCloudSprite();
-    
-    struct SCloud{
-        CCSprite *m_cloud;
-        float posX, posY;
-        float cloudSpeed;
-    }s_cloud[6];
-    void virtual update();
-    
+	CCloudSprite(void);
+	~CCloudSprite(void);
+
+	static CCloudSprite* create();
+	void update();
 private:
-    void setCloud(int num);
+	float cloudSpeed;
+	float cX, cY;
+
+	void resetCloud();
 };
 
-#endif /* defined(__MentalCare__CloudSprite__) */

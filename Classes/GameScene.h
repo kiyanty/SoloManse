@@ -49,6 +49,7 @@ private:
     CCArray* arrayHumanSprite;
     CCArray* arrayLaneSprite;
     CCArray* arrayRoadSprite;
+	CCArray* arrayCloudSprite;
     
     CCLayer* layerPauseMenu;
     CCMenu* menuStatePause;
@@ -70,8 +71,9 @@ private:
     
     //추가부분
     int humanCount;    
-    CCloudSprite *mainCloud;
     int roadChairCoolTime;
+
+
     
     // 끝
     
@@ -100,6 +102,7 @@ private:
     void initSpriteStateBar();
     void initSpriteCharacter();
     void initSpriteGameOver();
+	void initCloudSprite();
     void initMenuItemBtnPause();
     void initBMFont();
     
