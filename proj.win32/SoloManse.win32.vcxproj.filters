@@ -110,7 +110,7 @@
     <ClInclude Include="..\Classes\RoadSprite.h">
       <Filter>Source\Sprite\RoadSprite</Filter>
     </ClInclude>
-    <ClInclude Include="CloudSprite.h">
+    <ClInclude Include="..\Classes\CloudSprite.h">
       <Filter>Source\Sprite\CloudSprite</Filter>
     </ClInclude>
   </ItemGroup>
@@ -154,7 +154,7 @@
     <ClCompile Include="..\Classes\RoadSprite.cpp">
       <Filter>Source\Sprite\RoadSprite</Filter>
     </ClCompile>
-    <ClCompile Include="CloudSprite.cpp">
+    <ClCompile Include="..\Classes\CloudSprite.cpp">
       <Filter>Source\Sprite\CloudSprite</Filter>
     </ClCompile>
   </ItemGroup>
