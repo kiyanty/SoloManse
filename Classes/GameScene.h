@@ -87,7 +87,7 @@ private:
     
     void updateCharAnimation();
     void changeCharLine(bool isRight);
-    void update(float);
+    void update(float ct);
     
     void createHumanSprite();
     void createLaneSprite();
@@ -129,6 +129,10 @@ private:
     
     ///
     void startComboEffect();
+
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+    virtual void keyBackClicked();
+#endif // CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
 
 };
 

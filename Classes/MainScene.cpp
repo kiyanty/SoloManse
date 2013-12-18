@@ -60,6 +60,7 @@ bool MainScene::init()
     this->schedule( schedule_selector(MainScene::update) );
     // update Register
     this->setTouchEnabled(true);
+    this->setKeypadEnabled(true);
     
     CocosDenshion::SimpleAudioEngine* instance = CocosDenshion::SimpleAudioEngine::sharedEngine();
     instance->stopBackgroundMusic();
@@ -298,3 +299,17 @@ void MainScene::initToggleBtn()
     menuBtnSetting->setPosition(ccp(770, 130));
     this->addChild(menuBtnSetting);
 }
+
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+void MainScene::keyBackClicked()
+{
+    JniMethodInfo t;
+    if (JniHelper::getStaticMethodInfo(t, "com.solo.manse/SoloManse", "backButton", "()V"))
+    {
+        ///< 함수 호출
+        t.env->CallStaticVoidMethod(t.classID, t.methodID);
+        ///< Release
+        t.env->DeleteLocalRef(t.classID);
+    }
+}
+#endif // CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
