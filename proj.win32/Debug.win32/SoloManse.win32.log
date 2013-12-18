@@ -1,9 +1,33 @@
-﻿Build started 2013-12-18 오후 6:06:53.
+﻿Build started 2013-12-18 오후 10:14:38.
      1>Project "C:\Users\Kyoseung\Documents\Project\SoloManse\proj.win32\SoloManse.win32.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I. /I..\Classes /I.\lib\cocos2dx /I.\lib\cocos2dx\include /I.\lib\cocos2dx\kazmath\include /I.\lib\cocos2dx\platform\win32 /I.\lib\cocos2dx\platform\third_party\win32 /I.\lib\cocos2dx\platform\third_party\win32\OGLES /I.\lib\external /I.\lib\CocosDenshion\include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D STRICT /D _CRT_SECURE_NO_WARNINGS /D _SCL_SECURE_NO_WARNINGS_DEBUG /D COCOS2D_DEBUG=1 /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug.win32\\" /Fd"Debug.win32\vc110.pdb" /Gd /TP /wd4267 /wd4251 /wd4244 /analyze- /errorReport:prompt ..\Classes\CloudSprite.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I. /I..\Classes /I.\lib\cocos2dx /I.\lib\cocos2dx\include /I.\lib\cocos2dx\kazmath\include /I.\lib\cocos2dx\platform\win32 /I.\lib\cocos2dx\platform\third_party\win32 /I.\lib\cocos2dx\platform\third_party\win32\OGLES /I.\lib\external /I.\lib\CocosDenshion\include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D STRICT /D _CRT_SECURE_NO_WARNINGS /D _SCL_SECURE_NO_WARNINGS_DEBUG /D COCOS2D_DEBUG=1 /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug.win32\\" /Fd"Debug.win32\vc110.pdb" /Gd /TP /wd4267 /wd4251 /wd4244 /analyze- /errorReport:prompt ..\Classes\AppDelegate.cpp ..\Classes\CloudSprite.cpp ..\Classes\GameScene.cpp ..\Classes\HumanSprite.cpp ..\Classes\LaneSprite.cpp ..\Classes\MainScene.cpp ..\Classes\RatingScene.cpp ..\Classes\RoadSprite.cpp
+         MainScene.cpp
+     1>c:\users\kyoseung\documents\project\solomanse\classes\mainscene.cpp : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+     1>c:\users\kyoseung\documents\project\solomanse\classes\mainscene.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+     1>c:\users\kyoseung\documents\project\solomanse\proj.win32\lib\cocos2dx\platform\ccsaxparser.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+     1>c:\users\kyoseung\documents\project\solomanse\classes\gamescene.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+     1>c:\users\kyoseung\documents\project\solomanse\classes\mainscene.cpp(150): warning C4018: '<' : signed 또는 unsigned가 일치하지 않습니다.
+     1>c:\users\kyoseung\documents\project\solomanse\classes\mainscene.cpp(184): warning C4305: '초기화 중' : 'double'에서 'float'(으)로 잘립니다.
+         GameScene.cpp
+     1>c:\users\kyoseung\documents\project\solomanse\classes\gamescene.cpp : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+     1>c:\users\kyoseung\documents\project\solomanse\classes\gamescene.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+     1>c:\users\kyoseung\documents\project\solomanse\proj.win32\lib\cocos2dx\platform\ccsaxparser.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+     1>c:\users\kyoseung\documents\project\solomanse\classes\mainscene.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+     1>c:\users\kyoseung\documents\project\solomanse\classes\gamescene.cpp(145): warning C4018: '<' : signed 또는 unsigned가 일치하지 않습니다.
+     1>c:\users\kyoseung\documents\project\solomanse\classes\gamescene.cpp(150): warning C4018: '<' : signed 또는 unsigned가 일치하지 않습니다.
+     1>c:\users\kyoseung\documents\project\solomanse\classes\gamescene.cpp(155): warning C4018: '<' : signed 또는 unsigned가 일치하지 않습니다.
+     1>c:\users\kyoseung\documents\project\solomanse\classes\gamescene.cpp(160): warning C4018: '<' : signed 또는 unsigned가 일치하지 않습니다.
+     1>c:\users\kyoseung\documents\project\solomanse\classes\gamescene.cpp(583): warning C4305: '초기화 중' : 'double'에서 'float'(으)로 잘립니다.
          CloudSprite.cpp
      1>c:\users\kyoseung\documents\project\solomanse\proj.win32\lib\cocos2dx\platform\ccsaxparser.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+         코드를 생성하고 있습니다...
+         건너뛰고 있습니다... (관련된 변경 내용 없음)
+         RoadSprite.cpp
+         RatingScene.cpp
+         LaneSprite.cpp
+         HumanSprite.cpp
+         AppDelegate.cpp
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Kyoseung\Documents\Project\SoloManse\proj.win32\Debug.win32\SoloManse.win32.exe" /INCREMENTAL /NOLOGO /LIBPATH:C:\Users\Kyoseung\Documents\Project\SoloManse\proj.win32\Debug.win32\ libcocos2d.lib libExtensions.lib opengl32.lib glew32.lib libBox2d.lib libCocosDenshion.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Kyoseung\Documents\Project\SoloManse\proj.win32\Debug.win32\SoloManse.win32.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Kyoseung\Documents\Project\SoloManse\proj.win32\Debug.win32\SoloManse.win32.lib" /MACHINE:X86 Debug.win32\SoloManse.res
          Debug.win32\AppDelegate.obj
@@ -25,4 +49,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:02.32
+Time Elapsed 00:00:05.39

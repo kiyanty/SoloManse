@@ -10,6 +10,16 @@ CCloudSprite::CCloudSprite(void)
 	this->setPosition( ccp( this->cX, this->cY ) );
 }
 
+CCloudSprite::CCloudSprite(float x, float y, float speed)
+{
+	this->cloudSpeed = (rand()% 30)/10 + 2;
+	this->cX = x;
+	this->cY = rand()% 250 + 1300;
+
+	this->setScale( 1.3f );
+	this->setPosition( ccp( this->cX, this->cY ) );
+}
+
 CCloudSprite::~CCloudSprite(void)
 {
 }
@@ -19,7 +29,7 @@ CCloudSprite* CCloudSprite::create()
 	CCloudSprite *pobSprite = new CCloudSprite();
 	int rnd = rand()%4;
 	bool enPob = false;
-	if( pobSprite/*&& pobSprite->initWithFile("cloud1.png") */)
+	if( pobSprite )
 	{
 		if( rnd == 0 )
 		{
@@ -59,6 +69,53 @@ CCloudSprite* CCloudSprite::create()
 	CC_SAFE_DELETE( pobSprite );
 	return NULL;
 }
+
+CCloudSprite* CCloudSprite::create(float x, float y, float speed)
+{
+	CCloudSprite *pobSprite = new CCloudSprite(x, y, speed);
+	int rnd = rand()%4;
+	bool enPob = false;
+	if( pobSprite )
+	{
+		if( rnd == 0 )
+		{
+			if( pobSprite->initWithFile("cloud1.png") )
+			{
+				enPob = true;
+			}
+		}
+		else if( rnd == 1 )
+		{
+			if( pobSprite->initWithFile("cloud2.png") )
+			{
+				enPob = true;
+			}
+		}
+		else if( rnd == 2 )
+		{
+			if( pobSprite->initWithFile("cloud3.png") )
+			{
+				enPob = true;
+			}
+		}
+		else if( rnd == 3 )
+		{
+			if( pobSprite->initWithFile("cloud4.png") )
+			{
+				enPob = true;
+			}
+		}
+
+		if( enPob == true )
+		{	
+			pobSprite->autorelease();
+			return pobSprite;
+		}
+	}
+	CC_SAFE_DELETE( pobSprite );
+	return NULL;
+}
+
 
 void CCloudSprite::update()
 {

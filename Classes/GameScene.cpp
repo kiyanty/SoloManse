@@ -577,9 +577,13 @@ void GameScene::initCloudSprite()
 	this->arrayCloudSprite->retain();
 
 	CCloudSprite* cloud[8];
+	// ㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠ
+	struct manualValue{
+		float x, y, speed;
+	}mv_cloud[8] = {{123, 1456, 2},{234, 1654, 3.8},{345, 1579, 5},{526, 1369, 2.4},{-20, 1404, 3.1},{859, 1311, 4.3},{489, 1648, 3.6},{410, 1621, 3.8}};
 	for( int i = 0; i < 8; i++ )
 	{
-		cloud[i] = CCloudSprite::create();
+		cloud[i] = CCloudSprite::create(mv_cloud[i].x, mv_cloud[i].y, mv_cloud[i].speed);
 		this->arrayCloudSprite->addObject(cloud[i]);
 		this->addChild(cloud[i], 2);
 	}
